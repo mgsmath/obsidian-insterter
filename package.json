@@ -1,0 +1,27 @@
+{
+	"name": "obsidian-pasuk",
+	"version": "0.4.2",
+	"description": "Shiur Notes Inserter for Obsidian: bundled offline Tanakh, Rambam, and Gemara texts with Hebrew references",
+	"main": "main.js",
+	"scripts": {
+		"dev": "node tools/build-corpus.mjs && node esbuild.config.mjs",
+		"build": "node tools/build-corpus.mjs && tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+		"build-corpus": "node tools/build-corpus.mjs",
+		"fetch-study-corpus": "node tools/fetch-study-corpus.mjs",
+		"build-study-corpus": "node tools/build-study-corpus.mjs",
+		"test": "node tools/test-compose.mjs && node tools/test-study-corpus.mjs",
+		"lint": "eslint src/"
+	},
+	"keywords": ["obsidian", "tanakh", "torah", "hebrew", "pasuk", "bible", "rambam", "talmud", "gemara"],
+	"license": "MIT",
+	"devDependencies": {
+		"@types/node": "^16.11.6",
+		"esbuild": "0.17.3",
+		"eslint": "^9.0.0",
+		"eslint-plugin-obsidianmd": "^0.3.0",
+		"obsidian": "latest",
+		"tslib": "2.4.0",
+		"typescript": "^5.6.0",
+		"typescript-eslint": "^8.0.0"
+	}
+}
